@@ -98,6 +98,20 @@ var createScene = async function () {
       instructions.color = "black";
       instructions.fontSize = 16;
       instructions.textVerticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_BOTTOM
+
+      var button2 = BABYLON.GUI.Button.CreateSimpleButton("but2", "Start Game");
+      button2.width = "150px"
+      button2.height = "40px";
+      button2.color = "white";
+      button2.cornerRadius = 20;
+      button2.background = "purple";
+      button2.paddingTop = -100
+      button2.paddingBottom = -50
+      button2.onPointerUpObservable.add(function() {
+        music.stop()
+        currentScene = 1
+      });
+      advancedTexture.addControl(button2); 
       advancedTexture.addControl(instructions);
 
       var ground = BABYLON.MeshBuilder.CreateBox("box", {width:50, height :40, depth: 100}, scene)
