@@ -25,17 +25,25 @@ var createScene = async function () {
 
       var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
 
+      var title = new BABYLON.GUI.TextBlock();
+      title.text = "Tanks";
+      title.color = "White";
+      title.fontSize = 52;
+
       var button1 = BABYLON.GUI.Button.CreateSimpleButton("but1", "Start Game");
       button1.width = "150px"
       button1.height = "40px";
       button1.color = "white";
       button1.cornerRadius = 20;
       button1.background = "purple";
+      button1.paddingTop = 50
+      button1.paddingBottom = -50
       button1.onPointerUpObservable.add(function() {
         music.play()
         currentScene = 2
       });
       advancedTexture.addControl(button1);   
+      advancedTexture.addControl(title);   
       
       return scene;
   })();
