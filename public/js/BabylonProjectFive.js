@@ -183,7 +183,7 @@ var createScene = async function () {
       var tankCollisionMesh = new BABYLON.MeshBuilder.CreateBox("tankCollisionMeshPlayer", {width:1,height:5,depth:2}, scene)
       tankCollisionMesh.position = tank.position
       tankCollisionMesh.parent = tank
-      tankCollisionMesh.visibility = 0.1
+      tankCollisionMesh.visibility = 0
       tankCollisionMesh.checkCollisions = true
 
       var tankMat = new BABYLON.StandardMaterial()
@@ -274,7 +274,7 @@ var createScene = async function () {
       var tankCollisionMeshAI = new BABYLON.MeshBuilder.CreateBox("tankCollisionMeshAI", {width:1,height:5,depth:2}, scene)
       tankCollisionMeshAI.position = tankAI.position
       tankCollisionMeshAI.parent = tankAI
-      tankCollisionMeshAI.visibility = 0.5
+      tankCollisionMeshAI.visibility = 0
       tankCollisionMeshAI.checkCollisions = true
 
       var tankAIMat = new BABYLON.StandardMaterial()
